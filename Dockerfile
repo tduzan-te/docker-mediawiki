@@ -9,7 +9,7 @@ ENV DEBIAN_PRIORITY critical
 ENV DEBCONF_NOWARNINGS yes
 
 #Update base system and install required packages
-RUN curl http://nginx.org/keys/nginx_signing.key | apt-key add -
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
 RUN echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" | tee /etc/apt/sources.list.d/nginx-mainline.list
 RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 RUN echo "deb http://repo.percona.com/apt jessie main" | tee /etc/apt/sources.list.d/percona.list
